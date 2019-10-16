@@ -16,7 +16,7 @@
 
 如果返回net.ipv4.tcp_available_congestion_control = reno cubic bbr表示开启成功
 
-第四步：
+第四步
 
 # vi /etc/rc.local
 添加
