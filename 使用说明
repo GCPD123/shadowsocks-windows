@@ -1,0 +1,29 @@
+第一步：安装SS
+# wget --no-check-certificate https://raw.githubusercontent.com/iMeiji/shadowsocks_install/master/shadowsocks-go.sh
+# chmod +x shadowsocks-go.sh
+# ./shadowsocks-go.sh 2>&1 | tee shadowsocks-go.log
+
+第二步：安装BBR加速（需要linux内核高于4.9）
+# wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+# chmod +x bbr.sh
+# ./bbr.sh
+重启后查看
+# uname -r
+
+第三步：检查BBR是否开启
+
+使用命令sysctl net.ipv4.tcp_available_congestion_control检查bbr是否已经成功开启
+
+如果返回net.ipv4.tcp_available_congestion_control = reno cubic bbr表示开启成功
+
+shadowsocks 常用命令：
+
+启动：/etc/init.d/shadowsocks start
+停止：/etc/init.d/shadowsocks stop
+重启：/etc/init.d/shadowsocks restart
+状态：/etc/init.d/shadowsocks status
+
+执行完前面的安装脚本后，查看 shadowsocks 的运行状态：
+
+# /etc/init.d/shadowsocks status
+shadowsocks-go running with PID 1629
